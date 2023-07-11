@@ -1,8 +1,6 @@
 # Storytelling with Data Journey
 
-![Storytelling with Data Journey](https://your-image-url.jpg)
-
-Welcome to the Storytelling with Data Journey repository! This repository serves as a platform for sharing my journey as I read and implement the ideas presented in the book "Storytelling with Data" by Cole Nussbaumer.
+Welcome to the Storytelling with Data Journey repository! This repository serves as a platform for sharing my journey as I read and implement the ideas presented in the book ["Storytelling with Data" by Cole Nussbaumer](https://www.storytellingwithdata.com/books.
 
 ## About the Book
 
