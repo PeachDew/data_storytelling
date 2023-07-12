@@ -39,6 +39,6 @@ data['Region'].append('Outlier')
 
 df = pd.DataFrame(data)
 
-st.title("Storytelling with Data 🎭📈 helooo")
+st.title("Storytelling with Data 🎭📈")
 
 st.dataframe(df, hide_index=True)
