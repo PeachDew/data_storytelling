@@ -59,5 +59,14 @@ percentage_difference = ((max_sale - mean_sale) / mean_sale) * 100
 max_sales_year = df.loc[df['Sales'].idxmax(), 'Year']
 
 st.markdown(f'''
-In {max_sales_year} we had {max_sale} sales, which was {percentage_difference:.2f}% larger than on average!
-''')
+<style>
+.big-font {
+    font-size:150px;
+}
+.med-font {
+    font-size:50px;
+}
+</style>
+
+In **{max_sales_year}** we had <p class="med-font">{max_sale} sales</p>, which was <p class="big-font">{percentage_difference:.2f}%</p> larger than on average!
+''', unsafe_allow_html=True)
