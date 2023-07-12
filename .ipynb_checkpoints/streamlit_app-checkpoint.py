@@ -42,3 +42,17 @@ df = pd.DataFrame(data)
 st.title("Storytelling with Data 🎭📈")
 
 st.dataframe(df, hide_index=True)
+
+st.markdown('''
+## Using the numbers themselves
+When presenting/comparing few numbers, often a good idea to present the numbers themselves.
+''')
+
+max_sale = df.Sales.max()
+mean_sale = df.Sales.mean()
+percentage_difference = ((max_sale - mean_sale) / mean_sale) * 100
+max_sales_year = df.loc[df['Sales'].idxmax(), 'Year']
+
+st.markdown(f'''
+In {max_sales_year} we had {max_sale} sakes, which was {percentage_difference.2f}% larger than on average!
+''')
