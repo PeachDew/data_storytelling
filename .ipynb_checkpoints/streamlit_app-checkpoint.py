@@ -83,12 +83,14 @@ df = df.set_index('Year')
 plt.style.use('dark_background')
 
 fig, ax = plt.subplots()
-plt.figure(figsize=(10, 6))
+ax.figure(figsize=(10, 6))
 sns.heatmap(df, cmap='YlGnBu', annot=True, fmt='.0f', cbar=True)
-plt.title('Sales Performance by Year and Region')
-plt.xlabel('Region')
-plt.ylabel('Year')
-plt.show()
+ax.title('Sales Performance by Year and Region')
+ax.xlabel('Region')
+ax.ylabel('Year')
+ax.show()
 
 st.pyplot(fig)
+
+st.write("To enhance visualization and reduce mental processing, color saturation can be employed as a powerful tool to provide visual cues. By incorporating a heatmap, our eyes and brains can swiftly identify potential points of interest. The varying saturation levels in the heatmap enable quick identification of areas that stand out, allowing for a more efficient analysis and interpretation of the data.")
 
