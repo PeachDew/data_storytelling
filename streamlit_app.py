@@ -84,8 +84,8 @@ plt.style.use('dark_background')
 
 fig, ax = plt.subplots()
 ax = sns.heatmap(df, cmap='YlGnBu', annot=True, fmt='.0f', cbar=True)
-ax.patch.set_alpha(0.7)
-fig.patch.set_alpha(0.7)
+fig.patch.set_facecolor("#0B0B43")
+fig.patch.set_alpha(0.5)
 plt.title('Sales Performance by Year and Region')
 ax.set_yticklabels(ax.get_yticklabels(), rotation=45, ha='right')
 
