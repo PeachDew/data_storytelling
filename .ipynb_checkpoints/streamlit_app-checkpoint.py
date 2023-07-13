@@ -103,5 +103,18 @@ fig2 = sns.pairplot(iris, hue='species', markers=['o', 's', 'D'])
 st.columns([1.2,5,1])[1].write("Iris Dataset: Pairwise Relationships among Flower Measurements")
 st.pyplot(fig2)
 
+flights = sns.load_dataset("flights")
+agg_df = flights[['year','passengers']].groupby('year').mean()
+
+years = agg_df.index
+passengers = agg_df['passengers']
+
+fig3 = plt.plot(years, passengers, marker='o')
+plt.title('Passenger Traffic Over the Years')
+plt.xlabel('Year')
+plt.ylabel('Passenger Count')
+
+st.pyplot(fig3)
+
 
 
