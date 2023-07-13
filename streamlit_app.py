@@ -85,8 +85,7 @@ plt.style.use('dark_background')
 fig, ax = plt.subplots()
 ax = sns.heatmap(df, cmap='YlGnBu', annot=True, fmt='.0f', cbar=True)
 plt.title('Sales Performance by Year and Region')
-plt.xlabel('Region')
-plt.ylabel('Year')
+ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
 
 st.pyplot(fig)
 
