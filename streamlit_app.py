@@ -114,7 +114,7 @@ passengers = agg_df['passengers']
 fig3, ax = plt.subplots()
 ax.plot(years, passengers, marker='o')
 
-ax.set_title('Passenger Traffic Over the Years')
+ax.set_title('Flights Dataset: Passenger Traffic Over the Years')
 ax.set_xlabel('Year')
 ax.set_ylabel('Passenger Count')
 
@@ -123,6 +123,21 @@ with l2:
     st.markdown("Line graphs are a widely used visualization technique for representing continuous data. They are particularly effective for illustrating trends, patterns, and relationships over a continuous range of values. By connecting the data points with lines, line graphs emphasize the continuity and progression of the data.")
 with l1:    
     st.pyplot(fig3)
+    
+tips = sns.load_dataset('tips')
+
+avg_total_bill = tips.groupby('day')['total_bill'].mean()
+tip_percentage = tips.groupby('day')['tip'].mean() / tips.groupby('day')['total_bill'].mean() * 100
+
+
+fig, ax = plt.subplots()
+ax.plot(avg_total_bill, tip_percentage, marker='o', linestyle='-', color='blue')
+
+ax.set_title('Tip Percentage by Total Bill')
+ax.set_xlabel('Average Total Bill')
+ax.set_ylabel('Tip Percentage')
+
+st.pyplot(fig)    
 
 
 
