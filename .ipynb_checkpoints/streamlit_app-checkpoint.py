@@ -146,7 +146,7 @@ sns.lineplot(data=df_melted, x='Year', y='MarketShare', hue='Brand', marker='o')
 ax.set_title('Smartphone Market Share: 2019 vs 2020')
 ax.set_xlabel('Year')
 ax.set_ylabel('Market Share (%)')
-ax.legend(loc='center left', bbox_to_anchor=(1, 0.5)
+ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 
 st.pyplot(fig)
 
