@@ -124,20 +124,32 @@ with l2:
 with l1:    
     st.pyplot(fig3)
     
-tips = sns.load_dataset('tips')
+dataphone = {
+    'Brand': ['Apple', 'Samsung', 'Huawei', 'Xiaomi', 'OPPO'],
+    'MarketShare2019': [45.3, 21.2, 16.3, 9.2, 4],
+    'MarketShare2020': [48.2, 20.4, 14.6, 11.4, 5.4]
+}
 
-avg_total_bill = tips.groupby('day')['total_bill'].mean()
-tip_percentage = tips.groupby('day')['tip'].mean() / tips.groupby('day')['total_bill'].mean() * 100
+dfphone = pd.DataFrame(dataphone)
 
+dfphone['Difference'] = dfphone['MarketShare2020'] - dfphone['MarketShare2019']
+
+dfphone = dfphone.sort_values('Difference', ascending=False)
 
 fig, ax = plt.subplots()
-ax.plot(avg_total_bill, tip_percentage, marker='o', linestyle='-', color='blue')
+ax.plot(dfphone['Brand'], dfphone['MarketShare2019'], marker='o', label='2019', color='blue')
+ax.plot(dfphone['Brand'], dfphone['MarketShare2020'], marker='o', label='2020', color='orange')
 
-ax.set_title('Tip Percentage by Total Bill')
-ax.set_xlabel('Average Total Bill')
-ax.set_ylabel('Tip Percentage')
+for i in range(len(dfphone)):
+    ax.text(dfphone['Brand'][i], dfphone['MarketShare2019'][i], str(dfphone['MarketShare2019'][i]) + '%', ha='center', va='bottom', fontsize=8)
+    ax.text(dfphone['Brand'][i], dfphone['MarketShare2020'][i], str(dfphone['MarketShare2020'][i]) + '%', ha='center', va='bottom', fontsize=8)
 
-st.pyplot(fig)    
+ax.set_title('Smartphone Market Share: 2019 vs 2020')
+ax.set_xlabel('Brand')
+ax.set_ylabel('Market Share (%)')
+ax.legend()
+
+st.pyplot(fig)
 
 
 
