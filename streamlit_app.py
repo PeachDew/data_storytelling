@@ -82,13 +82,10 @@ df = df.set_index('Year')
 
 plt.style.use('dark_background')
 
-fig, ax = plt.subplots()
-ax.figure(figsize=(10, 6))
-sns.heatmap(df, cmap='YlGnBu', annot=True, fmt='.0f', cbar=True)
-ax.title('Sales Performance by Year and Region')
-ax.xlabel('Region')
-ax.ylabel('Year')
-ax.show()
+fig, ax = sns.heatmap(df, cmap='YlGnBu', annot=True, fmt='.0f', cbar=True)
+fig.title('Sales Performance by Year and Region')
+fig.xlabel('Region')
+fig.ylabel('Year')
 
 st.pyplot(fig)
 
