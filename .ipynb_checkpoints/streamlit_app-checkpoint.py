@@ -124,32 +124,38 @@ with l2:
 with l1:    
     st.pyplot(fig3)
     
-dataphone = {
-    'Brand': ['Apple', 'Samsung', 'Huawei', 'Xiaomi', 'OPPO'],
-    'MarketShare2019': [45.3, 21.2, 16.3, 9.2, 4],
-    'MarketShare2020': [48.2, 20.4, 14.6, 11.4, 5.4]
+    
+data = {
+    'Year': [2019, 2020],
+    'Apple': [45.3, 48.2],
+    'Samsung': [21.2, 20.4],
+    'Huawei': [16.3, 14.6],
+    'Xiaomi': [9.2, 11.4],
+    'OPPO': [4, 5.4]
 }
 
-dfphone = pd.DataFrame(dataphone)
 
-dfphone['Difference'] = dfphone['MarketShare2020'] - dfphone['MarketShare2019']
+df = pd.DataFrame(data)
 
-dfphone = dfphone.sort_values('Difference', ascending=False)
+
+df_melted = df.melt('Year', var_name='Brand', value_name='MarketShare')
+
 
 fig, ax = plt.subplots()
-ax.plot(dfphone['Brand'], dfphone['MarketShare2019'], marker='o', label='2019', color='blue')
-ax.plot(dfphone['Brand'], dfphone['MarketShare2020'], marker='o', label='2020', color='orange')
+sns.lineplot(data=df_melted, x='Year', y='MarketShare', hue='Brand', marker='o')
 
-for i in range(len(dfphone)):
-    ax.text(dfphone['Brand'][i], dfphone['MarketShare2019'][i], str(dfphone['MarketShare2019'][i]) + '%', ha='center', va='bottom', fontsize=8)
-    ax.text(dfphone['Brand'][i], dfphone['MarketShare2020'][i], str(dfphone['MarketShare2020'][i]) + '%', ha='center', va='bottom', fontsize=8)
+
+for i in range(len(df)):
+    ax.text(df['Year'][i], df_melted['MarketShare'][i], str(df_melted['MarketShare'][i]) + '%', ha='center', va='bottom', fontsize=8)
 
 ax.set_title('Smartphone Market Share: 2019 vs 2020')
-ax.set_xlabel('Brand')
+ax.set_xlabel('Year')
 ax.set_ylabel('Market Share (%)')
 ax.legend()
 
 st.pyplot(fig)
+
+
 
 
 
