@@ -136,7 +136,8 @@ data = {
 
 
 st.markdown("## Slope Graphs")
-st.markdown("Slopegraphs are a valuable visualization technique for comparing two time periods or points of reference and effectively showcasing relative increases, decreases, or differences across various categories.")
+
+
 df = pd.DataFrame(data)
 
 df_melted = df.melt('Year', var_name='Brand', value_name='MarketShare')
@@ -151,7 +152,12 @@ ax.set_ylabel('Market Share (%)')
 ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 ax.set_xticks([2019,2020])
 
-st.pyplot(fig)
+s1, s2 = st.columns([3,5])
+with s2:
+    st.pyplot(fig)
+with s1:
+    st.markdown("Slopegraphs are a valuable visualization technique for comparing two time periods or points of reference and effectively showcasing relative increases, decreases, or differences across various categories.")
+    
 
 
 
