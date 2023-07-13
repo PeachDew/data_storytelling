@@ -158,7 +158,7 @@ with s2:
 with s1:
     st.markdown("Slopegraphs are a valuable visualization technique for comparing two time periods or points of reference and effectively showcasing relative increases, decreases, or differences across various categories.")
     
-st.markdown("Bar Graphs")
+st.markdown("## Bar Graphs")
 st.markdown("Bar charts are often avoided due to their commonness, but this is actually a misconception. Instead, bar charts should be embraced precisely because they are familiar to a wide audience. The ubiquity of bar charts reduces the learning curve for viewers and allows them to quickly interpret the data.")
 tips = sns.load_dataset('tips')
 
