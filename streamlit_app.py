@@ -82,7 +82,7 @@ df = df.set_index('Year')
 
 plt.style.use('dark_background')
 
-fig, ax = sns.heatmap(df, cmap='YlGnBu', annot=True, fmt='.0f', cbar=True)
+fig = sns.heatmap(df, cmap='YlGnBu', annot=True, fmt='.0f', cbar=True)
 fig.title('Sales Performance by Year and Region')
 fig.xlabel('Region')
 fig.ylabel('Year')
