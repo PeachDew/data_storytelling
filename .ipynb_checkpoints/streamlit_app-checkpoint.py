@@ -137,21 +137,16 @@ data = {
 
 df = pd.DataFrame(data)
 
-
 df_melted = df.melt('Year', var_name='Brand', value_name='MarketShare')
 
 
 fig, ax = plt.subplots()
 sns.lineplot(data=df_melted, x='Year', y='MarketShare', hue='Brand', marker='o')
 
-
-for i in range(len(df)):
-    ax.text(df['Year'][i], df_melted['MarketShare'][i], str(df_melted['MarketShare'][i]) + '%', ha='center', va='bottom', fontsize=8)
-
 ax.set_title('Smartphone Market Share: 2019 vs 2020')
 ax.set_xlabel('Year')
 ax.set_ylabel('Market Share (%)')
-ax.legend()
+ax.legend(loc='center left', bbox_to_anchor=(1, 0.5)
 
 st.pyplot(fig)
 
