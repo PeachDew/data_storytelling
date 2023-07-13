@@ -100,7 +100,7 @@ st.markdown("Scatterplots are a powerful tool for visualizing the relationship b
 iris = sns.load_dataset('iris')
 
 fig2 = sns.pairplot(iris, hue='species', markers=['o', 's', 'D'])
-st.columns([1,3,1])[1].write("Iris Dataset: Pairwise Relationships among Flower Measurements")
+st.columns([1,5,1])[1].write("Iris Dataset: Pairwise Relationships among Flower Measurements")
 st.pyplot(fig2)
 
 
