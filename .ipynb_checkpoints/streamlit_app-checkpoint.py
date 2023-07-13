@@ -44,7 +44,7 @@ df = pd.DataFrame(data)
 
 st.title("Storytelling with Data 🎭📈")
 
-with st.columns([2,8,1])[1]:
+with st.columns([2.5,8,1])[1]:
     st.dataframe(df, hide_index=True)
 # or st.columns(3)[1].dataframe(df)    
 
