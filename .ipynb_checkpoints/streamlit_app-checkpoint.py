@@ -187,7 +187,7 @@ axes[1].legend(['Total Bill', 'Tip Amount'])
 
 # Display the plot using Streamlit
 st.pyplot(fig)
-st.markdown("One critical aspect to remember is that bar charts should always include a zero baseline. This means the x-axis should intersect the y-axis at zero. By maintaining a zero baseline, we ensure accurate visual comparisons. Our eyes naturally compare the relative heights or lengths of the bars, and a false comparison can arise if the baseline is not at zero.")
+st.markdown("One critical aspect to remember is that bar charts should always include a zero baseline.")
 st.markdown("For example, one might mistakenly perceive a significant disparity in business between Sunday and Friday when it may not actually be the case.")
 
 
