@@ -158,6 +158,8 @@ with s2:
 with s1:
     st.markdown("Slopegraphs are a valuable visualization technique for comparing two time periods or points of reference and effectively showcasing relative increases, decreases, or differences across various categories.")
     
+st.markdown("Bar Graphs")
+st.markdown("Bar charts are often avoided due to their commonness, but this is actually a misconception. Instead, bar charts should be embraced precisely because they are familiar to a wide audience. The ubiquity of bar charts reduces the learning curve for viewers and allows them to quickly interpret the data.")
 tips = sns.load_dataset('tips')
 
 avg_total_bill = tips.groupby('day')['total_bill'].mean()
@@ -169,7 +171,7 @@ fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 6))
 # non-zero baseline
 axes[0].bar(avg_total_bill.index, avg_total_bill, color='blue')
 axes[0].bar(avg_tip_amount.index, avg_tip_amount, color='orange')
-axes[0].set_title('Average Total Bill and Tip Amount by Day (Baseline Not at Zero)')
+axes[0].set_title('Average Total Bill and Tip Amount by Day')
 axes[0].set_xlabel('Day')
 axes[0].set_ylabel('Amount')
 axes[0].set_ylim([16, 30])
@@ -178,13 +180,16 @@ axes[0].legend(['Total Bill', 'Tip Amount'])
 # zero
 axes[1].bar(avg_total_bill.index, avg_total_bill, color='blue')
 axes[1].bar(avg_tip_amount.index, avg_tip_amount, color='orange')
-axes[1].set_title('Average Total Bill and Tip Amount by Day (Baseline at Zero)')
+axes[1].set_title('(Baseline at Zero)')
 axes[1].set_xlabel('Day')
 axes[1].set_ylabel('Amount')
 axes[1].legend(['Total Bill', 'Tip Amount'])
 
 # Display the plot using Streamlit
 st.pyplot(fig)
+st.markdown("One critical aspect to remember is that bar charts should always include a zero baseline. This means the x-axis should intersect the y-axis at zero. By maintaining a zero baseline, we ensure accurate visual comparisons. Our eyes naturally compare the relative heights or lengths of the bars, and a false comparison can arise if the baseline is not at zero.")
+st.markdown("For example, one might mistakenly perceive a significant disparity in business between Sunday and Friday when it may not actually be the case.")
+
 
 
 
