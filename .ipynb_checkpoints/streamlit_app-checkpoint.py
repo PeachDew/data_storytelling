@@ -68,6 +68,7 @@ st.markdown(f'''
 
 <span style="font-size:25px;"> This was </span><span style="font-size:35px;font-weight:bold;color: #ff6600;">{percentage_difference:.2f}% </span> <span style="font-size:25px;"> larger than average!</span>
 ''', unsafe_allow_html=True)
+st.divider()
 
 st.markdown("## Heatmaps")
 st.markdown("A heatmap is an effective visualization technique used to represent tabular data, replacing or supplementing numerical values with colored cells to visually depict the relative magnitudes of the data.")
@@ -92,4 +93,14 @@ ax.set_yticklabels(ax.get_yticklabels(), rotation=45, ha='right')
 st.pyplot(fig)
 
 st.write("To enhance visualization and reduce mental processing, color saturation can be employed as a powerful tool to provide visual cues. By incorporating a heatmap, our eyes and brains can swiftly identify potential points of interest. The varying saturation levels in the heatmap enable quick identification of areas that stand out, allowing for a more efficient analysis and interpretation of the data.")
+
+st.markdown("## Scatterplots")
+st.markdown("Scatterplots are a powerful tool for visualizing the relationship between two variables. By encoding data on both the horizontal x-axis and the vertical y-axis, scatterplots provide a clear representation of the relationship and allow for insightful analysis. They enable us to examine the presence and nature of the relationship between variables, facilitating the identification of patterns, trends, and correlations in the data.")
+
+iris = sns.load_dataset('iris')
+
+fig, ax = plt.subplots()
+ax= sns.pairplot(iris, hue='species', markers=['o', 's', 'D'])
+plt.title('Iris Dataset: Pairwise Relationships among Flower Measurements')
+st.pyplot(fig)
 
