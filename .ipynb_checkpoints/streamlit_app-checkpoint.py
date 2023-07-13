@@ -158,7 +158,32 @@ with s2:
 with s1:
     st.markdown("Slopegraphs are a valuable visualization technique for comparing two time periods or points of reference and effectively showcasing relative increases, decreases, or differences across various categories.")
     
+tips = sns.load_dataset('tips')
 
+avg_total_bill = tips.groupby('day')['total_bill'].mean()
+avg_tip_amount = tips.groupby('day')['tip'].mean()
+
+
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 6))
+
+# non-zero baseline
+axes[0].bar(avg_total_bill.index, avg_total_bill, color='blue')
+axes[0].bar(avg_tip_amount.index, avg_tip_amount, color='orange')
+axes[0].set_title('Average Total Bill and Tip Amount by Day (Baseline Not at Zero)')
+axes[0].set_xlabel('Day')
+axes[0].set_ylabel('Amount')
+axes[0].legend(['Total Bill', 'Tip Amount'])
+
+# zero
+axes[1].bar(avg_total_bill.index, avg_total_bill, color='blue')
+axes[1].bar(avg_tip_amount.index, avg_tip_amount, color='orange')
+axes[1].set_title('Average Total Bill and Tip Amount by Day (Baseline at Zero)')
+axes[1].set_xlabel('Day')
+axes[1].set_ylabel('Amount')
+axes[1].legend(['Total Bill', 'Tip Amount'])
+
+# Display the plot using Streamlit
+st.pyplot(fig)
 
 
 
