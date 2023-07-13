@@ -104,7 +104,6 @@ st.columns([1.2,5,1])[1].write("Iris Dataset: Pairwise Relationships among Flowe
 st.pyplot(fig2)
 
 st.markdown("## Lineplots")
-st.markdown("Line graphs are a widely used visualization technique for representing continuous data. They are particularly effective for illustrating trends, patterns, and relationships over a continuous range of values. By connecting the data points with lines, line graphs emphasize the continuity and progression of the data.")
 
 flights = sns.load_dataset("flights")
 agg_df = flights[['year','passengers']].groupby('year').mean()
@@ -119,7 +118,11 @@ ax.set_title('Passenger Traffic Over the Years')
 ax.set_xlabel('Year')
 ax.set_ylabel('Passenger Count')
 
-st.pyplot(fig3)
+l1, l2 = st.columns(2)
+with l2:
+    st.markdown("Line graphs are a widely used visualization technique for representing continuous data. They are particularly effective for illustrating trends, patterns, and relationships over a continuous range of values. By connecting the data points with lines, line graphs emphasize the continuity and progression of the data.")
+with l1:    
+    st.pyplot(fig3)
 
 
 
