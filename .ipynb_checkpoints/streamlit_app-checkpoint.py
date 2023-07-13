@@ -172,6 +172,7 @@ axes[0].bar(avg_tip_amount.index, avg_tip_amount, color='orange')
 axes[0].set_title('Average Total Bill and Tip Amount by Day (Baseline Not at Zero)')
 axes[0].set_xlabel('Day')
 axes[0].set_ylabel('Amount')
+axes[0].set_ylim([16, 30])
 axes[0].legend(['Total Bill', 'Tip Amount'])
 
 # zero
