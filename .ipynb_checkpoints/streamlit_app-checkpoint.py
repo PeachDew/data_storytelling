@@ -152,7 +152,7 @@ ax.set_ylabel('Market Share (%)')
 ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 ax.set_xticks([2019,2020])
 
-s1, s2 = st.columns([3,5])
+s1, s2 = st.columns([2,5])
 with s2:
     st.pyplot(fig)
 with s1:
