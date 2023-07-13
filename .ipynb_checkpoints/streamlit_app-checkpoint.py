@@ -103,16 +103,21 @@ fig2 = sns.pairplot(iris, hue='species', markers=['o', 's', 'D'])
 st.columns([1.2,5,1])[1].write("Iris Dataset: Pairwise Relationships among Flower Measurements")
 st.pyplot(fig2)
 
+st.markdown("## Lineplots")
+st.markdown("Line graphs are a widely used visualization technique for representing continuous data. They are particularly effective for illustrating trends, patterns, and relationships over a continuous range of values. By connecting the data points with lines, line graphs emphasize the continuity and progression of the data.")
+
 flights = sns.load_dataset("flights")
 agg_df = flights[['year','passengers']].groupby('year').mean()
 
 years = agg_df.index
 passengers = agg_df['passengers']
 
-fig3 = plt.plot(years, passengers, marker='o')
-plt.title('Passenger Traffic Over the Years')
-plt.xlabel('Year')
-plt.ylabel('Passenger Count')
+fig3, ax = plt.subplots()
+ax.plot(years, passengers, marker='o')
+
+ax.set_title('Passenger Traffic Over the Years')
+ax.set_xlabel('Year')
+ax.set_ylabel('Passenger Count')
 
 st.pyplot(fig3)
 
