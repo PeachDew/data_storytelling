@@ -1,6 +1,9 @@
 import streamlit as st
 import random
 import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 random.seed(42)
 
@@ -65,3 +68,27 @@ st.markdown(f'''
 
 <span style="font-size:25px;"> This was </span><span style="font-size:35px;font-weight:bold;color: #ff6600;">{percentage_difference:.2f}% </span> <span style="font-size:25px;"> larger than average!</span>
 ''', unsafe_allow_html=True)
+
+st.markdown("## Heatmaps")
+st.markdown("A heatmap is an effective visualization technique used to represent tabular data, replacing or supplementing numerical values with colored cells to visually depict the relative magnitudes of the data.")
+
+years = np.arange(2015, 2023)
+regions = ['North', 'South', 'East', 'West']
+sales_data = np.random.randint(50000, 200000, size=(len(years), len(regions)))
+
+df = pd.DataFrame(sales_data, columns=regions)
+df['Year'] = years
+df = df.set_index('Year')
+
+plt.style.use('dark_background')
+
+fig, ax = plt.subplots()
+plt.figure(figsize=(10, 6))
+sns.heatmap(df, cmap='YlGnBu', annot=True, fmt='.0f', cbar=True)
+plt.title('Sales Performance by Year and Region')
+plt.xlabel('Region')
+plt.ylabel('Year')
+plt.show()
+
+st.pyplot(fig)
+
