@@ -197,18 +197,16 @@ st.markdown("To better identify the important elements in our visuals, distingui
 st.divider()
 st.markdown("### Proximity 🚶‍♂️")
 colp1, colp2 = st.columns([3,2])
-with colp1:
-    colpp1, colpp2 = st.columns(2)
-    with colpp1:
-        df1 = pd.DataFrame(np.random.randint(1, 10, size=(5, 3)), columns=['Column 1', 'Column 2', 'Column 3'])
-        st.dataframe(df1, hide_index=True)
-    with colpp2:
-        df2 = pd.DataFrame({'Column 1': [123456789, 987654321, 456789123],
-                    'Column 2': [9876543210, 1234567890, 5678901234],
-                    'Column 3': [567890123, 890123456, 234567890]})
-        st.dataframe(df2, hide_index=True)            
-with colp2:    
-    st.markdown('''Objects that are physically close together are often perceived as belonging to the same group. Our minds naturally associate proximity with connectedness and group membership. 
+colpp1, colpp2 = st.columns(2)
+with colpp1:
+    df1 = pd.DataFrame(np.random.randint(1, 10, size=(5, 3)), columns=['Column 1', 'Column 2', 'Column 3'])
+    st.dataframe(df1, hide_index=True)
+with colpp2:
+    df2 = pd.DataFrame({'Column 1': [123456789, 987654321, 456789123],
+                'Column 2': [9876543210, 1234567890, 5678901234],
+                'Column 3': [567890123, 890123456, 234567890]})
+    st.dataframe(df2, hide_index=True)            
+st.markdown('''Objects that are physically close together are often perceived as belonging to the same group. Our minds naturally associate proximity with connectedness and group membership. 
 
 We can use this tendency in table design. By adjusting the spacing between rows/columns, we can guide the viewer's eyes either down the columns or across the rows. ''')
 st.divider()
