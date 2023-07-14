@@ -196,34 +196,39 @@ st.markdown("To better identify the important elements in our visuals, distingui
 
 st.divider()
 st.markdown("### Proximity 🚶‍♂️")
-col, col = st.columns(2)
-with col:
-    
-with col:    
+colp1, colp2 = st.columns(2)
+with colp1:
+    st.write("")
+with colp2:    
+    st.write("")
 st.divider()
 st.markdown("### Similarity 👥")
-col, col = st.columns(2)
-with col:
-    
-with col:
+cols1, cols2 = st.columns(2)
+with cols1:
+    st.write("")
+with cols2:
+    st.write("")
 st.divider()
 st.markdown("### Enclosure 📦")
-col, col = st.columns(2)
-with col:
-    
-with col:
+cole1, cole2 = st.columns(2)
+with cole1:
+    st.write("")
+with cole2:
+    st.write("")
 st.divider()
 st.markdown("### Closure ⭕️")
-col, col = st.columns(2)
-with col:
-    
-with col:
+colcl1, colcl2 = st.columns(2)
+with colcl1:
+    st.write("")
+with colcl2:
+    st.write("")
 st.divider()
 st.markdown("### Continuity 📈")
-col, col = st.columns(2)
-with col:
-    
-with col:
+colc3, colc4 = st.columns(2)
+with colc3:
+    st.write("")
+with colc4:
+    st.write("")
 st.divider()
 st.markdown("### Connection 👫")
 colc1, colc2 = st.columns(2)
