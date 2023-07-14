@@ -236,14 +236,14 @@ with colcl2:
     axes[1].barh(np.arange(len(categories)), values, edgecolor='none')
     axes[1].set_yticks(np.arange(len(categories)))
     axes[1].set_yticklabels(categories)
-    axes[0].set_title('Bar Chart Simplified')
+    axes[1].set_title('Bar Chart Simplified')
 
     axes[1].spines['left'].set_visible(False)
     axes[1].spines['bottom'].set_visible(False)
     axes[1].spines['right'].set_visible(False)
     axes[1].spines['top'].set_visible(False)
     
-    plt.subplots_adjust(wspace=0.3)
+    plt.subplots_adjust(hspace=0.3)
 
     st.pyplot(fig)
 st.divider()
