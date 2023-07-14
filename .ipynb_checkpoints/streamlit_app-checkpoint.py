@@ -231,20 +231,29 @@ with colc4:
     st.write("")
 st.divider()
 st.markdown("### Connection 👫")
-colc1, colc2 = st.columns(2)
+colc1, colc2 = st.columns([3,4])
 with colc1:
     st.markdown("Our perception naturally associates physically connected objects as belonging to a group. This principle of connection is commonly utilized, for instance, in line graphs, where it helps our eyes discern patterns and find order within the presented data.")
 with colc2:
     
-    fig, ax = plt.subplots()
-    sns.scatterplot(data=df_melted, x='Year', y='MarketShare', hue='Brand', marker='o')
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
 
-    ax.set_title('Smartphone Market Share: 2019 vs 2020')
-    ax.set_xlabel('Year')
-    ax.set_ylabel('Market Share (%)')
-    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-    ax.set_xticks([2019,2020])
-    
+    # Scatter plot
+    sns.scatterplot(data=df_melted, x='Year', y='MarketShare', hue='Brand', marker='o', ax=axes[0])
+    axes[0].set_title('Smartphone Market Share: 2019 vs 2020')
+    axes[0].set_xlabel('Year')
+    axes[0].set_ylabel('Market Share (%)')
+    axes[0].legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    axes[0].set_xticks([2019, 2020])
+
+    # Line plot
+    sns.lineplot(data=df_melted, x='Year', y='MarketShare', hue='Brand', marker='o', ax=axes[1])
+    axes[1].set_title('Smartphone Market Share: 2019 vs 2020')
+    axes[1].set_xlabel('Year')
+    axes[1].set_ylabel('Market Share (%)')
+    axes[1].legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    axes[1].set_xticks([2019, 2020])
+
     st.pyplot(fig)
 
 
