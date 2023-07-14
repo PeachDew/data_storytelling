@@ -50,13 +50,13 @@ st.title("Storytelling with Data 🎭📈")
 
 st.markdown(''' Welcome! Here I attempt to visualise and implement valuable lessons and insights from Cole Nussbaumer Knaflic's book, "Storytelling with Data,". Hope you enjoy your stay! ''')
 
-st.markdown('''# Choosing a Visual
+st.markdown('''# Choosing a Visual 🔍👁️
 In the vast landscape of data visualization, numerous graphs and visual displays exist, each serving a specific purpose. However, you'll be delighted to know that a select few can meet the majority of your data visualization needs.''')
 
 st.divider()
 
 st.markdown('''
-## Using the numbers themselves
+## Using numbers themselves
 When presenting/comparing few numbers, often a good idea to present the numbers themselves.
 ''')
 
