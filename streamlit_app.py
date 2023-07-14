@@ -236,39 +236,14 @@ with colc1:
     st.markdown("Our perception naturally associates physically connected objects as belonging to a group. This principle of connection is commonly utilized, for instance, in line graphs, where it helps our eyes discern patterns and find order within the presented data.")
 with colc2:
     
-    data = fetch_california_housing()
-    X = data.data[:, 2]  
-    y = data.target
+    fig, ax = plt.subplots()
+    sns.scatterplot(data=df_melted, x='Year', y='MarketShare', hue='Brand', marker='o')
 
-    # Group by average rooms and calculate mean house value
-    grouped = {}
-    for x_val, y_val in zip(X, y):
-        if x_val not in grouped:
-            grouped[x_val] = []
-        grouped[x_val].append(y_val)
-
-    avg_rooms = []
-    mean_values = []
-    for x_val, y_vals in grouped.items():
-        avg_rooms.append(x_val)
-        mean_values.append(sum(y_vals) / len(y_vals))
-
-    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
-
-    # Plot 1
-    axes[0].scatter(X, y)
-    axes[0].set_xlabel('Average Rooms per Dwelling')
-    axes[0].set_ylabel('Median House Value ($100,000s)')
-    axes[0].set_title('Scatter Plot')
-
-    # Plot 2
-    axes[1].scatter(avg_rooms, mean_values)
-    axes[1].set_xlabel('Average Rooms per Dwelling')
-    axes[1].set_ylabel('Mean House Value ($100,000s)')
-    axes[1].set_title('Mean House Value by Average Rooms')
-
-
-    st.pyplot(fig)
+    ax.set_title('Smartphone Market Share: 2019 vs 2020')
+    ax.set_xlabel('Year')
+    ax.set_ylabel('Market Share (%)')
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    ax.set_xticks([2019,2020])
 
 
 
