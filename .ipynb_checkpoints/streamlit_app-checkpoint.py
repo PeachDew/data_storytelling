@@ -226,12 +226,12 @@ with colcl2:
 
     fig, axes = plt.subplots(2, 1, figsize=(8, 10))
 
-    axes[0].bar(np.arange(len(categories)), values, color='blue', edgecolor='black')
+    axes[0].barh(np.arange(len(categories)), values, color='red', edgecolor='black')
     axes[0].set_xticks(np.arange(len(categories)))
     axes[0].set_xticklabels(categories)
     axes[0].set_title('Bar Chart with Borders and Shading')
 
-    axes[1].bar(np.arange(len(categories)), values, color='blue', edgecolor='none')
+    axes[1].barh(np.arange(len(categories)), values, edgecolor='none')
     axes[1].set_xticks(np.arange(len(categories)))
     axes[1].set_xticklabels(categories)
     axes[1].set_title('Bar Chart without Borders and Shading')
