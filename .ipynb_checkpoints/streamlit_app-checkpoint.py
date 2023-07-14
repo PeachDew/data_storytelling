@@ -230,7 +230,7 @@ with colc3:
     values = [10, 15, 8]
     
     fig, ax = plt.subplots()
-    ax.bar(categories, values, color=categories, edgecolor='none')
+    ax.bar(categories, values, edgecolor='none')
 
     # Remove axis lines
     ax.spines['left'].set_visible(False)
