@@ -201,8 +201,9 @@ colpp1, colpp2 = st.columns(2)
 with colpp1:
     df1 = pd.DataFrame(np.random.randint(1, 10, size=(5, 3)), columns=['Column 1', 'Column 2', 'Column 3'])
     styled_df1 = df1.style.set_table_styles([
-        {'selector': 'td', 'props': [('min-width', '50px')]},  # Set minimum cell width
+        {'selector': 'td', 'props': [('min-width', '100px')]},  # Set minimum cell width
     ])
+    styled_df1 = styled_df1.style.set_properties(**{'text-align': 'center'})
     st.dataframe(styled_df1, hide_index=True)
 with colpp2:
     df2 = pd.DataFrame({'Column 1': [123456789, 987654321, 456789123],
