@@ -190,7 +190,7 @@ axes[1].legend(['Total Bill', 'Tip Amount'])
 st.pyplot(fig)
 st.markdown("One critical aspect to remember is that bar charts should always include a zero baseline.")
 st.markdown("For example, one might mistakenly perceive a significant disparity in business between Sunday and Friday when it may not actually be the case.")
-
+st.divider()
 st.markdown("## Gestalt's principles of visual perception")
 st.markdown("To better identify the important elements in our visuals, distinguishing the signal (the information we want to convey) from the noise (clutter), we can turn to the Gestalt Principles of Visual Perception. Developed by the Gestalt School of Psychology in the early 1900s, these principles shed light on how individuals perceive order in their surroundings. They continue to be widely accepted and provide valuable insights into how people interact with and organize visual stimuli.")
 
@@ -201,7 +201,7 @@ colpp1, colpp2 = st.columns(2)
 with colpp1:
     df1 = pd.DataFrame(np.random.randint(1, 10, size=(5, 3)), columns=['Column 1', 'Column 2', 'Column 3'])
     styled_df1 = df1.style.set_table_styles([
-        {'selector': 'td', 'props': [('min-width', '100px'), ('text-align', 'center')]},  # Set minimum cell width
+        {'selector': 'td', 'props': [('min-width', '100px'), ('text-align', 'center')]},  
     ])
     st.dataframe(styled_df1, hide_index=True)
 with colpp2:
