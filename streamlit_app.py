@@ -224,9 +224,9 @@ with colcl2:
     categories = ['Category 1', 'Category 2', 'Category 3']
     values = [10, 15, 8]
 
-    fig, axes = plt.subplots(2, 1, figsize=(8, 10))
+    fig, axes = plt.subplots(2, 1, figsize=(8, 5))
 
-    axes[0].barh(np.arange(len(categories)), values, color='red', edgecolor='black', width=0.8)
+    axes[0].barh(np.arange(len(categories)), values, color='red', edgecolor='black')
     axes[0].set_yticks(np.arange(len(categories)))
     axes[0].set_yticklabels(categories)
     axes[0].set_title('Bar Chart with Borders and Shading')
