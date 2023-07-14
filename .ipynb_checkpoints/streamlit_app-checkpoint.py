@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
 
 random.seed(42)
 
@@ -195,16 +196,57 @@ st.markdown("To better identify the important elements in our visuals, distingui
 
 st.divider()
 st.markdown("### Proximity 🚶‍♂️")
+col, col = st.columns(2)
+with col:
+    
+with col:    
 st.divider()
 st.markdown("### Similarity 👥")
+col, col = st.columns(2)
+with col:
+    
+with col:
 st.divider()
 st.markdown("### Enclosure 📦")
+col, col = st.columns(2)
+with col:
+    
+with col:
 st.divider()
 st.markdown("### Closure ⭕️")
+col, col = st.columns(2)
+with col:
+    
+with col:
 st.divider()
 st.markdown("### Continuity 📈")
+col, col = st.columns(2)
+with col:
+    
+with col:
 st.divider()
 st.markdown("### Connection 👫")
+colc1, colc2 = st.columns(2)
+with colc1:
+    st.markdown("Our perception naturally associates physically connected objects as belonging to a group. This principle of connection is commonly utilized, for instance, in line graphs, where it helps our eyes discern patterns and find order within the presented data.")
+with colc2:
+    
+    data = fetch_california_housing()
+    X = data.data
+    y = data.target
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+
+    axes[0].scatter(X[:, 0], y)
+    axes[0].set_xlabel('Average Rooms per Dwelling')
+    axes[0].set_ylabel('Median House Value ($100,000s)')
+    axes[0].set_title('Scatter Plot')
+
+    axes[1].plot(X[:, 0], y)
+    axes[1].set_xlabel('Average Rooms per Dwelling')
+    axes[1].set_ylabel('Median House Value ($100,000s)')
+    axes[1].set_title('Line Plot')
+
+    st.pyplot(fig)
 
 
 
