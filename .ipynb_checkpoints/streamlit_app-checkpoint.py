@@ -48,9 +48,12 @@ df = pd.DataFrame(data)
 
 st.title("Storytelling with Data 🎭📈")
 
-with st.columns([2.5,8,1])[1]:
-    st.dataframe(df.head(), hide_index=True)
-# or st.columns(3)[1].dataframe(df)    
+st.markdown(''' Welcome! Here I attempt to visualise and implement valuable lessons and insights from Cole Nussbaumer Knaflic's book, "Storytelling with Data,". Hope you enjoy your stay! ''')
+
+st.markdown('''# Choosing a Visual
+In the vast landscape of data visualization, numerous graphs and visual displays exist, each serving a specific purpose. However, you'll be delighted to know that a select few can meet the majority of your data visualization needs.''')
+
+st.divider()
 
 st.markdown('''
 ## Using the numbers themselves
@@ -191,7 +194,7 @@ st.pyplot(fig)
 st.markdown("One critical aspect to remember is that bar charts should always include a zero baseline.")
 st.markdown("For example, one might mistakenly perceive a significant disparity in business between Sunday and Friday when it may not actually be the case.")
 st.divider()
-st.markdown('''## Principles of Visual Perception🧩👀''')
+st.markdown('''# Principles of Visual Perception🧩👀''')
 st.markdown('''To better identify the important elements in our visuals, distinguishing the signal (the information we want to convey) from the noise (clutter), we can turn to the **Gestalt Principles of Visual Perception**. 
 
 Developed by the Gestalt School of Psychology in the early 1900s, these principles shed light on how individuals perceive order in their surroundings. They continue to be widely accepted and provide valuable insights into how people interact with and organize visual stimuli.''')
