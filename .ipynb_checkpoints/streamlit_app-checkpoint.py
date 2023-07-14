@@ -219,7 +219,9 @@ st.divider()
 st.markdown("### Closure ⭕️")
 colcl1, colcl2 = st.columns(2)
 with colcl1:
-    st.write("The closure concept suggests that our minds prefer simplicity and tend to fill in missing parts to make sense of incomplete shapes. Our eyes automatically complete the picture, allowing us to perceive a whole even when some elements are missing.")
+    st.markdown('''The closure concept suggests that our minds prefer simplicity and tend to fill in missing parts to make sense of incomplete shapes. Our eyes automatically complete the picture, allowing us to perceive a whole even when some elements are missing.
+             
+Removing unnecessary elements like chart borders and background shading, as guided by the closure principle, allows our graph to appear cohesive. Furthermore, this helps emphasize our data.''')
 with colcl2:
     categories = ['Category 1', 'Category 2', 'Category 3']
     values = [10, 15, 8]
@@ -234,7 +236,6 @@ with colcl2:
     axes[1].barh(np.arange(len(categories)), values, edgecolor='none')
     axes[1].set_yticks(np.arange(len(categories)))
     axes[1].set_yticklabels(categories)
-    axes[1].set_title('Bar Chart without Borders and Shading')
 
     axes[1].spines['left'].set_visible(False)
     axes[1].spines['bottom'].set_visible(False)
