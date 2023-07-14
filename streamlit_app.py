@@ -310,6 +310,7 @@ with colc2:
     axes[0].set_xlabel('Year')
     axes[0].set_ylabel('Market Share (%)')
     axes[0].set_xticks([2019, 2020])
+    axes[0].legend('',frameon=False)
 
     # Line plot
     sns.lineplot(data=df_melted, x='Year', y='MarketShare', hue='Brand', marker='o', ax=axes[1])
