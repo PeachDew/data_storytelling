@@ -219,9 +219,29 @@ st.divider()
 st.markdown("### Closure ⭕️")
 colcl1, colcl2 = st.columns(2)
 with colcl1:
-    st.write("")
+    st.write("The closure concept suggests that our minds prefer simplicity and tend to fill in missing parts to make sense of incomplete shapes. Our eyes automatically complete the picture, allowing us to perceive a whole even when some elements are missing.")
 with colcl2:
-    st.write("")
+    categories = ['Category 1', 'Category 2', 'Category 3']
+    values = [10, 15, 8]
+
+    fig, axes = plt.subplots(2, 1, figsize=(8, 10))
+
+    axes[0].bar(np.arange(len(categories)), values, color='blue', edgecolor='black')
+    axes[0].set_xticks(np.arange(len(categories)))
+    axes[0].set_xticklabels(categories)
+    axes[0].set_title('Bar Chart with Borders and Shading')
+
+    axes[1].bar(np.arange(len(categories)), values, color='blue', edgecolor='none')
+    axes[1].set_xticks(np.arange(len(categories)))
+    axes[1].set_xticklabels(categories)
+    axes[1].set_title('Bar Chart without Borders and Shading')
+
+    axes[1].spines['left'].set_visible(False)
+    axes[1].spines['bottom'].set_visible(False)
+    axes[1].spines['right'].set_visible(False)
+    axes[1].spines['top'].set_visible(False)
+
+    st.pyplot(fig)
 st.divider()
 st.markdown("### Continuity 📈")
 colc3, colc4 = st.columns(2)
