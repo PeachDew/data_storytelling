@@ -230,7 +230,7 @@ with colc3:
     values = [10, 15, 8]
     
     fig, ax = plt.subplots()
-    ax.bar(categories, values, color='blue', edgecolor='none')
+    ax.bar(categories, values, color=categories, edgecolor='none')
 
     # Remove axis lines
     ax.spines['left'].set_visible(False)
@@ -241,7 +241,6 @@ with colc3:
     for i, v in enumerate(values):
         ax.text(i, v, str(v), ha='center', va='bottom')
 
-    ax.set_xlabel('Categories')
     st.pyplot(fig)
 with colc4:
     st.write("The principle of continuity is closely related to closure. When we observe objects, our eyes instinctively follow the smoothest path and mentally bridge gaps to create a sense of continuity, even when it may not be explicitly present. In line with this principle, I have omitted the vertical y-axis line from the graph. Interestingly, despite the absence of the line, our eyes naturally perceive that the bars align at the same point due to the consistent white space between them.")
