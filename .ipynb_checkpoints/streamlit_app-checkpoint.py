@@ -243,7 +243,9 @@ with colc3:
 
     st.pyplot(fig)
 with colc4:
-    st.write("The principle of continuity is closely related to closure. When we observe objects, our eyes instinctively follow the smoothest path and mentally bridge gaps to create a sense of continuity, even when it may not be explicitly present. In line with this principle, I have omitted the vertical y-axis line from the graph. Interestingly, despite the absence of the line, our eyes naturally perceive that the bars align at the same point due to the consistent white space between them.")
+    st.markdown('''The principle of continuity is closely related to closure. When we observe objects, our eyes instinctively follow the smoothest path and mentally bridge gaps to create a sense of continuity. 
+    
+Even without the vertical y-axis line from the graph, our eyes naturally perceive that the bars align at the same point due to the consistent white space between them. As mentioned in the closure principle, removing unnecessary elements enables our data to take center stage.''')
 st.divider()
 st.markdown("### Connection 👫")
 colc1, colc2 = st.columns([3,4])
