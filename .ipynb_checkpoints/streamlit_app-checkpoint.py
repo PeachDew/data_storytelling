@@ -212,13 +212,14 @@ with cols2:
     datas = {
     'Name': ['John', 'Emily', 'Michael', 'Sophia', 'William'],
     'Age': [25, 30, 35, 28, 32],
-    'City': ['New York', 'London', 'Paris', 'Tokyo', 'Sydney']
+    'City': ['New York', 'London', 'Paris', 'Tokyo', 'Sydney'],
+    'Salary': [50000, 60000, 70000, 55000, 65000]
     }
 
     dfs = pd.DataFrame(datas)
     highlight_rows = [2, 3]
-    styled_dfs = dfs.style.apply(lambda x: ['background-color: rgba(255, 255, 0, 0.3)' if i in highlight_rows else '' for i in range(len(x))], axis=1)
-    st.dataframe(styled_dfs)
+    styled_dfs = dfs.style.apply(lambda x: ['background-color: rgba(255, 255, 0, 0.3)' if i in highlight_rows else '' for i in range(len(x))], axis=0)
+    st.dataframe(styled_dfs, hide_index=True)
 st.divider()
 st.markdown("### Enclosure 📦")
 cole1, cole2 = st.columns(2)
