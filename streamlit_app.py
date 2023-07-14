@@ -237,16 +237,17 @@ with colc1:
 with colc2:
     
     data = fetch_california_housing()
-    X = data.data
-    y = data.target
+    grouped = data.group_by('AveRooms').mean()
+    X = grouped['AveRooms']
+    y = grouped.target
     fig, axes = plt.subplots(1, 2, figsize=(12, 6))
 
-    axes[0].scatter(X[:, 0], y)
+    axes[0].scatter(X, y)
     axes[0].set_xlabel('Average Rooms per Dwelling')
     axes[0].set_ylabel('Median House Value ($100,000s)')
     axes[0].set_title('Scatter Plot')
 
-    axes[1].plot(X[:, 0], y)
+    axes[1].plot(X, y)
     axes[1].set_xlabel('Average Rooms per Dwelling')
     axes[1].set_ylabel('Median House Value ($100,000s)')
     axes[1].set_title('Line Plot')
