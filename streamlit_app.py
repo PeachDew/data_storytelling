@@ -237,7 +237,7 @@ with colc1:
 with colc2:
     
     data = fetch_california_housing()
-    grouped = data.group_by('AveRooms').mean()
+    grouped = data.groupby('AveRooms').mean()
     X = grouped['AveRooms']
     y = grouped.target
     fig, axes = plt.subplots(1, 2, figsize=(12, 6))
