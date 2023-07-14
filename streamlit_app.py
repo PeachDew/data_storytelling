@@ -211,9 +211,9 @@ This principle can be effectively employed in tables to guide the attention of o
 with cols2:
     datas = {
     'Name': ['John', 'Emily', 'Michael', 'Sophia', 'William'],
-    'Age': [25, 30, 35, 28, 32],
-    'City': ['New York', 'London', 'Paris', 'Tokyo', 'Sydney'],
-    'Salary': [50000, 60000, 70000, 55000, 65000]
+    'Age': [25, 30, 29, 28, 32],
+    'City': ['London', 'Japan', 'New York', 'New York', 'Sydney'],
+    'Salary': [50000, 60000, 70000, 75000, 42000]
     }
 
     dfs = pd.DataFrame(datas)
