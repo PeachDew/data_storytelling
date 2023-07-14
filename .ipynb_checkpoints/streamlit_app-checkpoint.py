@@ -226,9 +226,25 @@ st.divider()
 st.markdown("### Continuity 📈")
 colc3, colc4 = st.columns(2)
 with colc3:
-    st.write("")
+    categories = ['Category 1', 'Category 2', 'Category 3']
+    values = [10, 15, 8]
+    
+    fig, ax = plt.subplots()
+    ax.bar(categories, values, color='blue', edgecolor='none')
+
+    # Remove axis lines
+    ax.spines['left'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+
+    for i, v in enumerate(values):
+        ax.text(i, v, str(v), ha='center', va='bottom')
+
+    ax.set_xlabel('Categories')
+    st.pyplot(fig)
 with colc4:
-    st.write("")
+    st.write("The principle of continuity is closely related to closure. When we observe objects, our eyes instinctively follow the smoothest path and mentally bridge gaps to create a sense of continuity, even when it may not be explicitly present. In line with this principle, I have omitted the vertical y-axis line from the graph. Interestingly, despite the absence of the line, our eyes naturally perceive that the bars align at the same point due to the consistent white space between them.")
 st.divider()
 st.markdown("### Connection 👫")
 colc1, colc2 = st.columns([3,4])
@@ -243,7 +259,6 @@ with colc2:
     axes[0].set_title('Smartphone Market Share: 2019 vs 2020')
     axes[0].set_xlabel('Year')
     axes[0].set_ylabel('Market Share (%)')
-    axes[0].legend(loc='center left', bbox_to_anchor=(1, 0.5))
     axes[0].set_xticks([2019, 2020])
 
     # Line plot
