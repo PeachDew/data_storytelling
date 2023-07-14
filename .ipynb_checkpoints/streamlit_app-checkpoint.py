@@ -244,6 +244,8 @@ with colc2:
     ax.set_ylabel('Market Share (%)')
     ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
     ax.set_xticks([2019,2020])
+    
+    st.pyplot(fig)
 
 
 
