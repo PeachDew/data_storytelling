@@ -222,7 +222,7 @@ with cole1:
 
     highlight_start = 2016.5
     highlight_end = 2020
-    highlight_rect = plt.Rectangle((highlight_start, min(values)), highlight_end - highlight_start, max(values)-min(values), facecolor='yellow', alpha=0.3)
+    highlight_rect = plt.Rectangle((highlight_start, min(values))-1, highlight_end - highlight_start, max(values)-min(values)+1, facecolor='yellow', alpha=0.3)
     ax.add_patch(highlight_rect)
 
     st.pyplot(fig)
