@@ -212,9 +212,23 @@ st.divider()
 st.markdown("### Enclosure 📦")
 cole1, cole2 = st.columns(2)
 with cole1:
-    st.write("")
+    years = [2015, 2016, 2017, 2018, 2019, 2020, 2021]
+    values = [10, 15, 8, 12, 9, 13, 11]
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.plot(years, values)
+    ax.set_xlabel('Year')
+    ax.set_ylabel('Value')
+    ax.set_title('Line Graph')
+
+    highlight_start = 2017
+    highlight_end = 2020
+    highlight_rect = plt.Rectangle((highlight_start, min(values)), highlight_end - highlight_start, max(values)-min(values), facecolor='yellow', alpha=0.3)
+    ax.add_patch(highlight_rect)
+
+    st.pyplot(fig)
 with cole2:
-    st.write("")
+    st.write("When objects are physically enclosed together, we naturally perceive them as belonging to a cohesive group. We can make use of the enclosure principle to visually differentiate and highlight specific elements within our data. ")
 st.divider()
 st.markdown("### Closure ⭕️")
 colcl1, colcl2 = st.columns(2)
@@ -243,7 +257,7 @@ with colcl2:
     axes[1].spines['right'].set_visible(False)
     axes[1].spines['top'].set_visible(False)
     
-    plt.subplots_adjust(hspace=0.3)
+    plt.subplots_adjust(hspace=0.5)
 
     st.pyplot(fig)
 st.divider()
