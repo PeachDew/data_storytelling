@@ -190,6 +190,22 @@ st.pyplot(fig)
 st.markdown("One critical aspect to remember is that bar charts should always include a zero baseline.")
 st.markdown("For example, one might mistakenly perceive a significant disparity in business between Sunday and Friday when it may not actually be the case.")
 
+st.markdown("## Gestalt's principles of visual perception")
+st.markdown("To better identify the important elements in our visuals, distinguishing the signal (the information we want to convey) from the noise (clutter), we can turn to the Gestalt Principles of Visual Perception. Developed by the Gestalt School of Psychology in the early 1900s, these principles shed light on how individuals perceive order in their surroundings. They continue to be widely accepted and provide valuable insights into how people interact with and organize visual stimuli.")
+
+st.divider()
+st.markdown("Proximity")
+st.divider()
+st.markdown("Similarity")
+st.divider()
+st.markdown("Enclosure")
+st.divider()
+st.markdown("Closure")
+st.divider()
+st.markdown("Continuity")
+st.divider()
+st.markdown("Correction")
+
 
 
 
