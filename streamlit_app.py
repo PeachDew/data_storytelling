@@ -205,9 +205,11 @@ st.divider()
 st.markdown("### Similarity 👥")
 cols1, cols2 = st.columns(2)
 with cols1:
-    st.write("")
+    st.markdown('''Objects that share similarities in color, shape, size, or orientation are naturally perceived as being related or belonging to the same group. 
+
+This principle can be effectively employed in tables to guide the attention of our audience towards specific areas we want them to focus on.''')
 with cols2:
-    st.write("")
+    
 st.divider()
 st.markdown("### Enclosure 📦")
 cole1, cole2 = st.columns(2)
@@ -222,7 +224,7 @@ with cole1:
 
     highlight_start = 2016.5
     highlight_end = 2020
-    highlight_rect = plt.Rectangle((highlight_start, min(values))-1, highlight_end - highlight_start, max(values)-min(values)+1, facecolor='yellow', alpha=0.3)
+    highlight_rect = plt.Rectangle((highlight_start, min(values)-1), highlight_end - highlight_start, max(values)-min(values)+1, facecolor='yellow', alpha=0.3)
     ax.add_patch(highlight_rect)
 
     st.pyplot(fig)
