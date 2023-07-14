@@ -213,13 +213,12 @@ st.markdown("### Enclosure 📦")
 cole1, cole2 = st.columns(2)
 with cole1:
     years = [2015, 2016, 2017, 2018, 2019, 2020, 2021]
-    values = [10, 15, 8, 12, 9, 13, 11]
+    values = [10, 15, 8, 9, 11, 10, 9]
 
     fig, ax = plt.subplots(figsize=(8, 6))
     ax.plot(years, values)
     ax.set_xlabel('Year')
-    ax.set_ylabel('Value')
-    ax.set_title('Line Graph')
+    ax.set_ylabel('Sales')
 
     highlight_start = 2017
     highlight_end = 2020
