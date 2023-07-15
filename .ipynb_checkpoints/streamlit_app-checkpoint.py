@@ -355,7 +355,7 @@ fig, ax = plt.subplots()
 b1 = ax.barh(r1, your_scores, height=bar_width, label='Our Company')
 b2 = ax.barh(r2, competitor1_scores, color='grey', height=bar_width, label='Competitor 1')
 b3 = ax.barh(r3, competitor2_scores, color='grey', height=bar_width, label='Competitor 2')
-ax.bar_label(b1, label_type='center')
+ax.bar_label(b1, label_type='center', labels = "Our Company")
 ax.bar_label(b2, label_type='center')
 ax.bar_label(b3, label_type='center')
 
