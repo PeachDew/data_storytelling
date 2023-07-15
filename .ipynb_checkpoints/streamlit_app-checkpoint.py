@@ -358,8 +358,8 @@ b3 = ax.barh(r3, competitor2_scores, color='grey', height=bar_width, label='Comp
 tboxes = ax.bar_label(b1, label_type='center', labels = ["Our Company" for x in range(3)])
 for label in tboxes:
     label.set_color('black')
-ax.bar_label(b2, label_type='center')
-ax.bar_label(b3, label_type='center')
+ax.bar_label(b2, label_type='center', labels = ["Competitor 1" for x in range(3)])
+ax.bar_label(b3, label_type='center', labels = ["Competitor 2" for x in range(3)])
 
 ax.set_xlabel('Scores')
 ax.set_title('Comparison: Your Company vs Competitors')
