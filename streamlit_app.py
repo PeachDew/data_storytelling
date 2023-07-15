@@ -364,8 +364,9 @@ ax.set_yticklabels(metrics)
 st.pyplot(fig)
 
 fig, ax = plt.subplots()
-ax.scatter(metrics your_scores, marker='o', s=100, label='Your Company')
-ax.scatter(metrics, competitor1_scores, marker='s', s=100, label='Competitor 1', competitor2_scores, marker='^', s=100, label='Competitor 2')
+ax.scatter(metrics, your_scores, marker='o', s=100, label='Your Company')
+ax.scatter(metrics, competitor1_scores, marker='s', s=100, label='Competitor 1')
+ax.scatter(metrics, competitor2_scores, marker='^', s=100, label='Competitor 2')
 
 ax.set_xlabel('Metrics')
 ax.set_ylabel('Scores')
