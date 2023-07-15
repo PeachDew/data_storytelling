@@ -352,15 +352,33 @@ r2 = [x + bar_width for x in r1]
 r3 = [x + 2 * bar_width for x in r1]
 
 fig, ax = plt.subplots()
-ax.barh(r1, your_scores, color='blue', height=bar_width, label='Your Company')
-ax.barh(r2, competitor1_scores, color='orange', height=bar_width, label='Competitor 1')
-ax.barh(r3, competitor2_scores, color='green', height=bar_width, label='Competitor 2')
+ax.barh(r1, your_scores, height=bar_width, label='Your Company')
+ax.barh(r2, competitor1_scores, color='grey', height=bar_width, label='Competitor 1')
+ax.barh(r3, competitor2_scores, color='grey', height=bar_width, label='Competitor 2')
 
 ax.set_xlabel('Scores')
 ax.set_ylabel('Metrics')
 ax.set_title('Comparison: Your Company vs Competitors')
 ax.set_yticks([r + bar_width for r in range(len(metrics))])
 ax.set_yticklabels(metrics)
+ax.legend()
+
+st.pyplot(fig)
+
+r1 = np.arange(len(metrics))
+r2 = [x + bar_width for x in r1]
+r3 = [x + 2 * bar_width for x in r1]
+
+fig, ax = plt.subplots()
+ax.scatter(r1, your_scores, marker='o', s=100, label='Your Company')
+ax.scatter(r2, competitor1_scores, marker='s', s=100, label='Competitor 1')
+ax.scatter(r3, competitor2_scores, marker='^', s=100, label='Competitor 2')
+
+ax.set_xlabel('Metrics')
+ax.set_ylabel('Scores')
+ax.set_title('Comparison: Your Company vs Competitors')
+ax.set_xticks(r1)
+ax.set_xticklabels(metrics)
 ax.legend()
 
 st.pyplot(fig)
