@@ -352,7 +352,7 @@ r2 = [x + bar_width for x in r1]
 r3 = [x + 2 * bar_width for x in r1]
 
 fig, ax = plt.subplots()
-ax.barh(r1, your_scores, height=bar_width, label='Your Company')
+ax.barh(r1, your_scores, height=bar_width, label='Our Company')
 ax.barh(r2, competitor1_scores, color='grey', height=bar_width, label='Competitor 1')
 ax.barh(r3, competitor2_scores, color='grey', height=bar_width, label='Competitor 2')
 
@@ -360,16 +360,12 @@ ax.set_xlabel('Scores')
 ax.set_title('Comparison: Your Company vs Competitors')
 ax.set_yticks([r + bar_width for r in range(len(metrics))])
 ax.set_yticklabels(metrics)
-ax.legend()
 
 st.pyplot(fig)
 
-r1, r2, r3 = [0,1,2]
-
 fig, ax = plt.subplots()
-ax.scatter(r1, your_scores, marker='o', s=100, label='Your Company')
-ax.scatter(r2, competitor1_scores, marker='s', s=100, label='Competitor 1')
-ax.scatter(r3, competitor2_scores, marker='^', s=100, label='Competitor 2')
+ax.scatter(metrics your_scores, marker='o', s=100, label='Your Company')
+ax.scatter(metrics, competitor1_scores, marker='s', s=100, label='Competitor 1', competitor2_scores, marker='^', s=100, label='Competitor 2')
 
 ax.set_xlabel('Metrics')
 ax.set_ylabel('Scores')
