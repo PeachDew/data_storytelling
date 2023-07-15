@@ -338,6 +338,31 @@ with colc2:
     axes[1].set_xticks([2019, 2020])
 
     st.pyplot(fig)
+    
+st.markdown("## Strategic Constrast 🎯🎭")
+metrics = ['Price', 'Convenience', 'Service']
+your_scores = [8, 9, 7]
+competitor1_scores = [7, 8, 8]
+competitor2_scores = [6, 7, 9]
+
+bar_width = 0.2
+
+r1 = np.arange(len(metrics))
+r2 = [x + bar_width for x in r1]
+r3 = [x + 2 * bar_width for x in r1]
+
+plt.barh(r1, your_scores, color='blue', height=bar_width, label='Your Company')
+plt.barh(r2, competitor1_scores, color='orange', height=bar_width, label='Competitor 1')
+plt.barh(r3, competitor2_scores, color='green', height=bar_width, label='Competitor 2')
+
+plt.xlabel('Scores')
+plt.ylabel('Metrics')
+plt.title('Comparison: Your Company vs Competitors')
+plt.yticks([r + bar_width for r in range(len(metrics))], metrics)
+plt.legend()
+
+plt.show()
+
 
 
 
