@@ -365,7 +365,7 @@ with colsc1:
     ax.bar_label(b3, label_type='center', labels = ["Competitor 2" for x in range(3)])
 
     ax.set_xlabel('Scores')
-    ax.set_title('Comparison: Your Company vs Competitors')
+    ax.set_title('Comparison: Our Company vs Competitors')
     ax.set_yticks([r + bar_width for r in range(len(metrics))])
     ax.set_yticklabels(metrics)
 
@@ -378,12 +378,16 @@ with colsc2:
 
     ax.set_xlabel('Metrics')
     ax.set_ylabel('Scores')
-    ax.set_title('Comparison: Your Company vs Competitors')
+    ax.set_title('Comparison: Our Company vs Competitors')
     ax.set_xticks(r1)
     ax.set_xticklabels(metrics)
     ax.legend()
 
     st.pyplot(fig)
+    
+st.markdown('''
+By employing effective contrast and incorporating thoughtful design choices, we can significantly enhance the process of obtaining the information we seek. Contrast, along with other deliberate design decisions, allows us to access information more swiftly, effortlessly, and with a sense of comfort. 😌
+''')
 
 
 
