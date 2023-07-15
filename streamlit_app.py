@@ -357,7 +357,6 @@ ax.barh(r2, competitor1_scores, color='grey', height=bar_width, label='Competito
 ax.barh(r3, competitor2_scores, color='grey', height=bar_width, label='Competitor 2')
 
 ax.set_xlabel('Scores')
-ax.set_ylabel('Metrics')
 ax.set_title('Comparison: Your Company vs Competitors')
 ax.set_yticks([r + bar_width for r in range(len(metrics))])
 ax.set_yticklabels(metrics)
@@ -365,9 +364,7 @@ ax.legend()
 
 st.pyplot(fig)
 
-r1 = np.arange(len(metrics))
-r2 = [x + bar_width for x in r1]
-r3 = [x + 2 * bar_width for x in r1]
+r1, r2, r3 = [0,1,2]
 
 fig, ax = plt.subplots()
 ax.scatter(r1, your_scores, marker='o', s=100, label='Your Company')
