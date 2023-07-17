@@ -505,11 +505,11 @@ Trailing zeros on y-axis labels serve no informative purpose and only contribute
 colguide5, colguide6 = st.columns(2)
 with colguide5:    
     st.markdown('''
-    #### 5️⃣ Label Data Directly
+#### 5️⃣ Label Data Directly
     ''')
-with colguide6    
+with colguide6:   
     st.markdown('''
-    #### 6️⃣ Leverage Consistent Colors
+#### 6️⃣ Leverage Consistent Colors
     ''')
 
 
