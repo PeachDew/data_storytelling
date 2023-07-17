@@ -394,15 +394,15 @@ y1 = np.random.randn(len(x))
 y2 = np.random.randn(len(x)) + 2
 
 fig, ax = plt.subplots()
-ax.plot(x, y1, 'b-', label='Class A')
-ax.plot(x, y2, 'r-', label='Class B')
+ax.plot(x, y1, 'b-', label='Apple')
+ax.plot(x, y2, 'r-', label='Samsung')
 ax.scatter(x, y1, c='b', marker='o')
 ax.scatter(x, y2, c='r', marker='o')
 
 #Add chart borders and prominent gridlines
 ax.spines['top'].set_visible(True)
 ax.spines['right'].set_visible(True)
-ax.grid(color='gray', linestyle='--', linewidth=0.5)
+ax.grid(color='white', linestyle='--', linewidth=1.5)
 
 #Add legend
 ax.legend()
