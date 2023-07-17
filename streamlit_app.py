@@ -391,10 +391,8 @@ By employing effective contrast and incorporating thoughtful design choices, we 
 ''')
 
 x = np.arange(2010, 2023, 1)
-y1 = np.random.randn(len(x)) *10020+15000
-y2 = np.random.randn(len(x)) *10000+15000
-np.append(y1,30512)
-np.append(y2,25858)
+y1 = [53903,90233,90909,124901,120411,132140,172140]
+y2 = [43903,40233,50909,54901,70411,82124,101490]
 
 fig, ax = plt.subplots(linewidth=10, edgecolor="white")
 ax.plot(x, y1, 'b-', label='Apple')
