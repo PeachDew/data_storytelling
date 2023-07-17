@@ -390,7 +390,7 @@ st.markdown('''
 By employing effective contrast and incorporating thoughtful design choices, we can significantly enhance the process of obtaining the information we seek. Contrast, along with other deliberate design decisions, allows us to access information more swiftly, effortlessly, and with a sense of comfort. 😌
 ''')
 
-x = np.arange(2013, 2023, 1)
+x = np.arange(2016, 2023, 1)
 y1 = [53903,90233,90909,124901,120411,132140,172140]
 y2 = [43903,40233,50909,54901,70411,82124,101490]
 
@@ -405,6 +405,10 @@ ax.spines['top'].set_visible(True)
 ax.spines['right'].set_visible(True)
 ax.grid(color='white', linestyle='--', linewidth=1.5)
 ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
+
+ax.set_title('Sales Over Time')
+ax.set_xlabel('Year')
+ax.set_ylabel('Sales')
 
 #Add legend
 ax.legend()
