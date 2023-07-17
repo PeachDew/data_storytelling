@@ -396,7 +396,7 @@ y2 = np.random.randn(len(x)) *10000+15000
 np.append(y1,30512)
 np.append(y2,25858)
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(linewidth=10, edgecolor="white")
 ax.plot(x, y1, 'b-', label='Apple')
 ax.plot(x, y2, 'r-', label='Samsung')
 ax.scatter(x, y1, c='b', marker='o')
@@ -406,8 +406,6 @@ ax.scatter(x, y2, c='r', marker='o')
 ax.spines['top'].set_visible(True)
 ax.spines['right'].set_visible(True)
 ax.grid(color='white', linestyle='--', linewidth=1.5)
-fig.patch.set_edgecolor('white')  
-fig.patch.set_linewidth(1) 
 ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
 
 #Add legend
