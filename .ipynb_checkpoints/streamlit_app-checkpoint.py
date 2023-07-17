@@ -392,7 +392,7 @@ By employing effective contrast and incorporating thoughtful design choices, we 
 
 x = np.arange(2016, 2023, 1)
 y1 = [53903,90233,90909,124901,120411,132140,172140]
-y2 = [43903,40233,50909,54901,70411,82124,101490]
+y2 = [43903,91233,87909,104901,110411,112124,121490]
 
 fig, ax = plt.subplots(linewidth=10, edgecolor="white")
 ax.plot(x, y1, 'b-', label='Apple')
