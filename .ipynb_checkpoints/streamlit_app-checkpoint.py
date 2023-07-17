@@ -515,6 +515,8 @@ with colguide6:
     fig, ax = plt.subplots()
     ax.plot(x, y1, 'b-', label='Apple')
     ax.plot(x, y2, 'r-', label='Samsung')
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
     ax.grid(color='grey', linestyle='--', linewidth=0.5)
     ax.set_title('Sales Over Time')
     ax.set_ylabel('Sales')
