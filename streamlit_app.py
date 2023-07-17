@@ -389,6 +389,30 @@ st.markdown('''
 By employing effective contrast and incorporating thoughtful design choices, we can significantly enhance the process of obtaining the information we seek. Contrast, along with other deliberate design decisions, allows us to access information more swiftly, effortlessly, and with a sense of comfort. 😌
 ''')
 
+x = np.arange(2010, 2023, 1)
+y1 = np.random.randn(len(x))
+y2 = np.random.randn(len(x)) + 2
+
+fig, ax = plt.subplots()
+ax.plot(x, y1, 'b-', label='Class A')
+ax.plot(x, y2, 'r-', label='Class B')
+ax.scatter(x, y1, c='b', marker='o')
+ax.scatter(x, y2, c='r', marker='o')
+
+#Add chart borders and prominent gridlines
+ax.spines['top'].set_visible(True)
+ax.spines['right'].set_visible(True)
+ax.grid(color='gray', linestyle='--', linewidth=0.5)
+
+#Set axis decimal places
+ax.xaxis.set_major_formatter('{:.2f}')
+ax.yaxis.set_major_formatter('{:.2f}')
+
+#Add legend
+ax.legend()
+
+st.pyplot(fig)
+
 
 
 
