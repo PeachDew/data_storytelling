@@ -404,6 +404,8 @@ ax.spines['top'].set_visible(True)
 ax.spines['right'].set_visible(True)
 ax.grid(color='white', linestyle='--', linewidth=1.5)
 
+ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
+
 #Add legend
 ax.legend()
 
