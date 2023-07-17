@@ -393,6 +393,8 @@ By employing effective contrast and incorporating thoughtful design choices, we 
 x = np.arange(2010, 2023, 1)
 y1 = np.random.randn(len(x)) *10020+15000
 y2 = np.random.randn(len(x)) *10000+15000
+y1.append(30512)
+y2.append(25858)
 
 fig, ax = plt.subplots()
 ax.plot(x, y1, 'b-', label='Apple')
