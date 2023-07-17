@@ -404,10 +404,6 @@ ax.spines['top'].set_visible(True)
 ax.spines['right'].set_visible(True)
 ax.grid(color='gray', linestyle='--', linewidth=0.5)
 
-#Set axis decimal places
-ax.xaxis.set_major_formatter('{:.2f}')
-ax.yaxis.set_major_formatter('{:.2f}')
-
 #Add legend
 ax.legend()
 
