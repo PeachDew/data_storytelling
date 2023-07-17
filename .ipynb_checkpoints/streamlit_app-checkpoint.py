@@ -411,7 +411,7 @@ ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
 #Add legend
 ax.legend()
 
-st.pyplot(fig)
+st.pyplot(fig, edgecolor=fig.get_edgecolor())
 
 
 
