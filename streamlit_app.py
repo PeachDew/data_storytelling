@@ -390,7 +390,7 @@ st.markdown('''
 By employing effective contrast and incorporating thoughtful design choices, we can significantly enhance the process of obtaining the information we seek. Contrast, along with other deliberate design decisions, allows us to access information more swiftly, effortlessly, and with a sense of comfort. 😌
 ''')
 
-x = np.arange(2010, 2023, 1)
+x = np.arange(2013, 2023, 1)
 y1 = [53903,90233,90909,124901,120411,132140,172140]
 y2 = [43903,40233,50909,54901,70411,82124,101490]
 
