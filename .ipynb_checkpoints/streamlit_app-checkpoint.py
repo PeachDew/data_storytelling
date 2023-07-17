@@ -502,6 +502,7 @@ Trailing zeros on y-axis labels serve no informative purpose and only contribute
     
 colguide5, colguide6 = st.columns(2)
 with colguide5:    
+    st.markdown("#### 5️⃣ Label Data Directly")
     fig, ax = plt.subplots()
     ax.plot(x, y1, 'b-', label='Apple')
     ax.plot(x, y2, 'r-', label='Samsung')
@@ -511,16 +512,16 @@ with colguide5:
     ax.set_title('Sales Over Time')
     ax.set_xlabel('Year')
     ax.set_ylabel('Sales')
-    ax.text(x[-1], y1[-1], 'Apple', ha='right', va='bottom', color='black')
-    ax.text(x[-1], y2[-1], 'Samsung', ha='right', va='top', color='black')
+    ax.text(x[-1], y1[-1], 'Apple', ha='right', va='bottom', color='white')
+    ax.text(x[-1], y2[-1]+1000, 'Samsung', ha='right', va='top', color='white')
     st.pyplot(fig)
 
     st.markdown('''
-#### 5️⃣ Label Data Directly
 By reducing the extraneous cognitive load, it becomes even more apparent how the task of referring back and forth between the legend and the data can feel burdensome. As designers of the information, our goal is to identify any elements that might require effort from our audience and take on that work ourselves. 
     ''')
             
 with colguide6:   
+    st.markdown("#### 6️⃣ Leverage Consistent Colors")
     fig, ax = plt.subplots()
     ax.plot(x, y1, 'b-', label='Apple')
     ax.plot(x, y2, 'r-', label='Samsung')
@@ -531,10 +532,9 @@ with colguide6:
     ax.set_xlabel('Year')
     ax.set_ylabel('Sales')
     ax.text(x[-1], y1[-1], 'Apple', ha='right', va='bottom', color='blue')
-    ax.text(x[-1], y2[-1], 'Samsung', ha='right', va='top', color='red')
+    ax.text(x[-1], y2[-1]+1000, 'Samsung', ha='right', va='top', color='red')
     st.pyplot(fig)
     st.markdown('''
-#### 6️⃣ Leverage Consistent Colors
 Let's also consider leveraging the Gestalt principle of similarity by using the same color for the data labels as the data they represent. By doing so, we provide a visual cue to our audience that establishes a connection between the data and its corresponding labels.
     ''')
 
