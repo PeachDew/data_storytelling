@@ -390,6 +390,14 @@ st.markdown('''
 By employing effective contrast and incorporating thoughtful design choices, we can significantly enhance the process of obtaining the information we seek. Contrast, along with other deliberate design decisions, allows us to access information more swiftly, effortlessly, and with a sense of comfort. 😌
 ''')
 
+st.divider()
+st.markdown('''
+### Step-By-Step Guide for Graph Decluttering 📊🧹
+''')
+
+st.divider()
+
+st.markdown("Now is the perfect moment to put into practice the valuable lessons we have learned about Gestalt principles, alignment, white space, and contrast. Let's examine the initial graph below consider what elements we can eliminate or modify. How many issues can you spot?")
 x = np.arange(2016, 2023, 1)
 y1 = [53903,90233,90909,124901,120411,132140,172140]
 y2 = [43903,91233,87909,104901,110411,112124,121490]
@@ -414,6 +422,65 @@ ax.set_ylabel('Sales')
 ax.legend()
 
 st.pyplot(fig, edgecolor=fig.get_edgecolor())
+
+
+st.markdown('''
+#### Remove Chart Borders
+Chart borders often serve no significant purpose. Instead, exploit white space to create a clear distinction between the visual elements and other components on the page.
+''')
+
+fig, ax = plt.subplots()
+ax.plot(x, y1, 'b-', label='Apple')
+ax.plot(x, y2, 'r-', label='Samsung')
+ax.scatter(x, y1, c='b', marker='o')
+ax.scatter(x, y2, c='r', marker='o')
+ax.spines['top'].set_visible(True)
+ax.spines['right'].set_visible(True)
+ax.grid(color='white', linestyle='--', linewidth=1.5)
+ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
+ax.set_title('Sales Over Time')
+ax.set_xlabel('Year')
+ax.set_ylabel('Sales')
+ax.legend()
+st.pyplot(fig)
+
+st.markdown('''
+#### Remove Grid Lines
+If you believe that guiding your audience's attention from the data to the axis would be beneficial or that your data would be better understood with the aid of gridlines, you may choose to keep them. However, it is important to ensure that the gridlines do not overpower or visually compete with your data. (Use thin/grey ones)
+''')
+
+fig, ax = plt.subplots()
+ax.plot(x, y1, 'b-', label='Apple')
+ax.plot(x, y2, 'r-', label='Samsung')
+ax.scatter(x, y1, c='b', marker='o')
+ax.scatter(x, y2, c='r', marker='o')
+ax.spines['top'].set_visible(True)
+ax.spines['right'].set_visible(True)
+ax.grid(color='grey', linestyle='--', linewidth=0.5)
+ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
+ax.set_title('Sales Over Time')
+ax.set_xlabel('Year')
+ax.set_ylabel('Sales')
+ax.legend()
+st.pyplot(fig)
+
+st.markdown('''
+#### Remove Data Markers
+''')
+
+st.markdown('''
+#### Clean Axis Labels
+''')
+
+st.markdown('''
+#### Label Data Directly
+''')
+
+st.markdown('''
+#### Leverage Consistent Colors
+''')
+
+
 
 
 
