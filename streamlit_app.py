@@ -425,6 +425,7 @@ st.pyplot(fig, edgecolor=fig.get_edgecolor())
 
 colguide1, colguide2 = st.columns(2)
 with colguide1:
+    st.markdown("#### 1️⃣ Remove Chart Borders")
     fig, ax = plt.subplots()
     ax.plot(x, y1, 'b-', label='Apple')
     ax.plot(x, y2, 'r-', label='Samsung')
@@ -440,11 +441,11 @@ with colguide1:
     ax.legend()
     st.pyplot(fig)
     st.markdown('''
-    #### 1️⃣ Remove Chart Borders
     Chart borders often serve no significant purpose. Instead, exploit white space to create a clear distinction between the visual elements and other components on the page.
     ''')
 
 with colguide2:
+    st.markdown("#### 2️⃣ Remove Grid Lines")
     fig, ax = plt.subplots()
     ax.plot(x, y1, 'b-', label='Apple')
     ax.plot(x, y2, 'r-', label='Samsung')
@@ -460,12 +461,12 @@ with colguide2:
     ax.legend()
     st.pyplot(fig)
     st.markdown('''
-    #### 2️⃣ Remove Grid Lines
     If you believe that guiding your audience's attention from the data to the axis would be beneficial or that your data would be better understood with the aid of gridlines, you may choose to keep them. However, it is important to ensure that the gridlines do not overpower or visually compete with your data. (Use thin/grey ones)
     ''')
 
 colguide3, colguide4 = st.columns(2)
 with colguide3:    
+    st.markdown("#### 3️⃣ Remove Data Markers")
     fig, ax = plt.subplots()
     ax.plot(x, y1, 'b-', label='Apple')
     ax.plot(x, y2, 'r-', label='Samsung')
@@ -479,11 +480,11 @@ with colguide3:
     ax.legend()
     st.pyplot(fig)
     st.markdown('''
-#### 3️⃣ Remove Data Markers
 It's important to remember that each element in your graph adds cognitive load for your audience. In the case of data markers, they can introduce additional cognitive load when the data is already visually represented with lines. This doesn't mean that you should never use data markers, but rather use them intentionally and purposefully, rather than including them by default in your graphing application.
     ''')
     
 with colguide4:    
+    st.markdown("#### 4️⃣ Clean Axis Labels")
     fig, ax = plt.subplots()
     ax.plot(x, y1, 'b-', label='Apple')
     ax.plot(x, y2, 'r-', label='Samsung')
@@ -496,7 +497,6 @@ with colguide4:
     ax.legend()
     st.pyplot(fig)
     st.markdown('''
-#### 4️⃣ Clean Axis Labels
 Trailing zeros on y-axis labels serve no informative purpose and only contribute to making the numbers appear more complex than they actually are. By removing these unnecessary trailing zeros, we can alleviate the burden on the audience's cognitive load and present the data in a clearer and more simplified manner.
     ''')
     
@@ -513,7 +513,7 @@ with colguide5:
     ax.set_xlabel('Year')
     ax.set_ylabel('Sales')
     ax.text(x[-1], y1[-1], 'Apple', ha='right', va='bottom', color='white')
-    ax.text(x[-1], y2[-1]+1000, 'Samsung', ha='right', va='top', color='white')
+    ax.text(x[-1], y2[-1]+10000, 'Samsung', ha='right', va='top', color='white')
     st.pyplot(fig)
 
     st.markdown('''
@@ -532,7 +532,7 @@ with colguide6:
     ax.set_xlabel('Year')
     ax.set_ylabel('Sales')
     ax.text(x[-1], y1[-1], 'Apple', ha='right', va='bottom', color='blue')
-    ax.text(x[-1], y2[-1]+1000, 'Samsung', ha='right', va='top', color='red')
+    ax.text(x[-1], y2[-1]+10000, 'Samsung', ha='right', va='top', color='red')
     st.pyplot(fig)
     st.markdown('''
 Let's also consider leveraging the Gestalt principle of similarity by using the same color for the data labels as the data they represent. By doing so, we provide a visual cue to our audience that establishes a connection between the data and its corresponding labels.
