@@ -5,6 +5,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.datasets import fetch_california_housing
+from matplotlib.ticker import FormatStrFormatter
 
 random.seed(42)
 
@@ -390,8 +391,8 @@ By employing effective contrast and incorporating thoughtful design choices, we 
 ''')
 
 x = np.arange(2010, 2023, 1)
-y1 = np.random.randn(len(x))
-y2 = np.random.randn(len(x)) + 2
+y1 = np.random.randn(len(x)) *10020+15000
+y2 = np.random.randn(len(x)) *10000+15000
 
 fig, ax = plt.subplots()
 ax.plot(x, y1, 'b-', label='Apple')
