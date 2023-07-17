@@ -397,10 +397,10 @@ st.markdown('''
 
 st.divider()
 
-st.markdown("Now is the perfect moment to put into practice the valuable lessons we have learned about Gestalt principles, alignment, white space, and contrast. Let's examine the initial graph below consider what elements we can eliminate or modify. How many issues can you spot?")
+st.markdown("Let us put into practice the valuable lessons we have learned about Gestalt principles, alignment, white space, and contrast. We first examine the initial graph below and consider what elements we can eliminate or modify. How many issues can you spot?")
 x = np.arange(2016, 2023, 1)
-y1 = [53903,90233,90909,124901,120411,132140,172140]
-y2 = [43903,91233,87909,104901,110411,112124,121490]
+y1 = [53,90,90,124,120,132,172]
+y2 = [43,91,87,104,110,112,121]
 
 fig, ax = plt.subplots(linewidth=10, edgecolor="white")
 ax.plot(x, y1, 'b-', label='Apple')
@@ -513,7 +513,7 @@ with colguide5:
     ax.set_xlabel('Year')
     ax.set_ylabel('Sales')
     ax.text(x[-1], y1[-1], 'Apple', ha='right', va='bottom', color='white')
-    ax.text(x[-1], y2[-1]+10000, 'Samsung', ha='right', va='top', color='white')
+    ax.text(x[-1], y2[-1]+10, 'Samsung', ha='right', va='top', color='white')
     st.pyplot(fig)
 
     st.markdown('''
@@ -532,7 +532,7 @@ with colguide6:
     ax.set_xlabel('Year')
     ax.set_ylabel('Sales')
     ax.text(x[-1], y1[-1], 'Apple', ha='right', va='bottom', color='blue')
-    ax.text(x[-1], y2[-1]+10000, 'Samsung', ha='right', va='top', color='red')
+    ax.text(x[-1], y2[-1]+10, 'Samsung', ha='right', va='top', color='red')
     st.pyplot(fig)
     st.markdown('''
 Let's also consider leveraging the Gestalt principle of similarity by using the same color for the data labels as the data they represent. By doing so, we provide a visual cue to our audience that establishes a connection between the data and its corresponding labels.
