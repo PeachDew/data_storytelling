@@ -555,10 +555,10 @@ row_names = [
 ]
 
 data = {
-    'Column1': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'a', '|', '|'],
-    'Column2': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'a', '|', '|'],
-    'Column3': ['/', '□', '--', '||', 'O', ')', '+', '[ | ]', '|', 'A', '     |', '<-|->'],
-    'Column4': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'a', '|', '|']
+    'Column1': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'aaah', '|', 'o'],
+    'Column2': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'aaah', '|', 'o'],
+    'Column3': ['/', '□', '--', '||', 'O', ')', '+', '[ | ]', '|', 'AAAH', '     |', '...o'],
+    'Column4': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'aaah', '|', 'o']
 }
 df = pd.DataFrame(data, index=row_names)
 
@@ -570,6 +570,9 @@ def bold(x):
 
 styled = df.style.applymap(color, subset=("Hue","Column3"))
 styled2 = styled.applymap(bold, subset=('Intensity', "Column3"))
+df.style.set_table_styles([
+    {'selector': 'thead', 'props': [('display', 'none')]}
+])
 
 st.dataframe(styled2)
 
