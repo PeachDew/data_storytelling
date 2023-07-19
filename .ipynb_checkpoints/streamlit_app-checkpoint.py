@@ -535,6 +535,37 @@ with colguide6:
 Let's also consider leveraging the Gestalt principle of similarity by using the same color for the data labels as the data they represent. By doing so, we provide a visual cue to our audience that establishes a connection between the data and its corresponding labels.
     ''')
 
+st.markdown("## Memory 🧠📚")
+st.markdown('''
+There are three types of memory in the brain that are particularly relevant to visual communications: iconic memory, short-term memory, and long-term memory. 
+
+***Iconic memory*** is responsible for processing visual information rapidly and unconsciously, a trait that has evolved to aid in survival. 
+
+***Short-term memory*** has its limitations, allowing people to hold only about four chunks of visual information at a time. To optimize communication, it becomes essential to minimize cognitive burden by presenting coherent chunks of information. 
+
+***Long-term memory***, developed over a lifetime, plays a crucial role in pattern recognition and cognitive processing. By combining visual and verbal elements in communication, we can enhance recall and trigger associations and experiences, ensuring a more impactful message delivery.
+''')
+st.divider()
+st.markdown("### Preattentive attributes ")
+st.divider()
+
+row_names = [
+    'Orientation', 'Shape', 'Line_length', 'Line_width',
+    'Size', 'Curvature', 'Added_marks', 'Enclosure',
+    'Hue', 'Intensity', 'Spatial_position', 'Motion'
+]
+
+data = {
+    'Column1': [''] * len(row_names),
+    'Column2': [''] * len(row_names),
+    'Column3': [''] * len(row_names),
+    'Column4': [''] * len(row_names)
+}
+
+df = pd.DataFrame(data, index=row_names)
+
+st.dataframe(df)
+
 
 
 
