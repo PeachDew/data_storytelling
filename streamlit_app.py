@@ -539,14 +539,14 @@ st.markdown("## Memory 🧠📚")
 st.markdown('''
 There are three types of memory in the brain that are particularly relevant to visual communications: iconic memory, short-term memory, and long-term memory. 
 
-***Iconic memory*** is responsible for processing visual information rapidly and unconsciously, a trait that has evolved to aid in survival. 
+💡*** Iconic memory*** is responsible for processing visual information rapidly and unconsciously, a trait that has evolved to aid in survival. 
 
-***Short-term memory*** has its limitations, allowing people to hold only about four chunks of visual information at a time. To optimize communication, it becomes essential to minimize cognitive burden by presenting coherent chunks of information. 
+⏱️*** Short-term memory*** has its limitations, allowing people to hold only about four chunks of visual information at a time. To optimize communication, it becomes essential to minimize cognitive burden by presenting coherent chunks of information. 
 
-***Long-term memory***, developed over a lifetime, plays a crucial role in pattern recognition and cognitive processing. By combining visual and verbal elements in communication, we can enhance recall and trigger associations and experiences, ensuring a more impactful message delivery.
+🌳*** Long-term memory***, developed over a lifetime, plays a crucial role in pattern recognition and cognitive processing. By combining visual and verbal elements in communication, we can enhance recall and trigger associations and experiences, ensuring a more impactful message delivery.
 ''')
 st.divider()
-st.markdown("### Preattentive attributes ")
+st.markdown("### Preattentive attributes 💡")
 st.divider()
 
 row_names = [
@@ -556,10 +556,10 @@ row_names = [
 ]
 
 data = {
-    'Column1': [''] * len(row_names),
-    'Column2': [''] * len(row_names),
-    'Column3': [''] * len(row_names),
-    'Column4': [''] * len(row_names)
+    'Column1': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', '|', '|', '|'],
+    'Column2': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', '|', '|', '|'],
+    'Column3': ['/', '□', '--', '||', 'O', ')', '+', '[ | ]', '|', '|', '  |', '<-|->'],
+    'Column4': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', '|', '|', '|']
 }
 
 df = pd.DataFrame(data, index=row_names)
