@@ -570,8 +570,8 @@ def bold(x):
     return f"font-weight: bold; font-size: 32px;" if  x == 'A' else None
 
 
-styled = df.style.applymap(color, subset=("Hue","Column3"))
-styled2 = styled.applymap(bold, subset=('Intensity', "Column3"))
+styled = df.style.applymap(color, subset=("Hue","3"))
+styled2 = styled.applymap(bold, subset=("Intensity", "3"))
 
 
 st.dataframe(styled2, height = 450, use_container_width=True)
