@@ -547,7 +547,6 @@ There are three types of memory in the brain that are particularly relevant to v
 ''')
 st.divider()
 st.markdown("### Preattentive attributes 💡")
-st.divider()
 
 row_names = [
     'Orientation', 'Shape', 'Line_length', 'Line_width',
@@ -565,8 +564,6 @@ df = pd.DataFrame(data, index=row_names)
 
 df_styled = df.style.applymap(lambda x: 'color: red' if x == '|' else '', subset=pd.IndexSlice[[9], ['Column3']])
 df_styled = df_styled.applymap(lambda x: 'font-weight: bold' if x == '|' else '', subset=pd.IndexSlice[[10], ['Column3']])
-df_styled = df.style.hide_columns()
-
 
 st.dataframe(df_styled)
 
