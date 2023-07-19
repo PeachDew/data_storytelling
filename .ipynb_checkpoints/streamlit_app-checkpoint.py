@@ -555,10 +555,10 @@ row_names = [
 ]
 
 data = {
-    'Column1': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', '|', '|', '|'],
-    'Column2': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', '|', '|', '|'],
-    'Column3': ['/', '□', '--', '||', 'O', ')', '+', '[ | ]', '|', '|', '     |', '<-|->'],
-    'Column4': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', '|', '|', '|']
+    'Column1': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'a', '|', '|'],
+    'Column2': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'a', '|', '|'],
+    'Column3': ['/', '□', '--', '||', 'O', ')', '+', '[ | ]', '|', 'A', '     |', '<-|->'],
+    'Column4': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'a', '|', '|']
 }
 df = pd.DataFrame(data, index=row_names)
 
@@ -566,7 +566,7 @@ def color(x):
     return f"color: red;" if  x == '|' else None
 
 def bold(x):
-    return f"font-weight: bold; font-size: 32px;" if  x == '|' else None
+    return f"font-weight: bold; font-size: 32px;" if  x == 'A' else None
 
 styled = df.style.applymap(color, subset=("Hue","Column3"))
 styled2 = styled.applymap(bold, subset=('Intensity', "Column3"))
