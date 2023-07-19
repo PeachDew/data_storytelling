@@ -566,12 +566,12 @@ def color(x):
     return f"color: red;" if  x == '|' else None
 
 def bold(x):
-    return f"font-weight: bold;" if  x == '|' else None
+    return f"font-weight: bold; font-size: 32px;" if  x == '|' else None
 
 styled = df.style.applymap(color, subset=("Hue","Column3"))
-styled = df.style.applymap(bold, subset=('Intensity', "Column3"))
+styled2 = styled.applymap(bold, subset=('Intensity', "Column3"))
 
-st.dataframe(styled)
+st.dataframe(styled2)
 
 
 
