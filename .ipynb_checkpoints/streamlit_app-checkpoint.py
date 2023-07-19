@@ -562,8 +562,11 @@ data = {
 }
 df = pd.DataFrame(data, index=row_names)
 
-df.style.applymap(lambda x: 'color: red' if x == '|' else None, subset=([8,9], "Column3"))
-df.style.applymap(lambda x: 'font-weight: bold' if x == '|' else None, subset=([8,9], "Column3"))
+def color(x):
+    return f"color: red;" if  x == '|' else None
+
+df.style.applymap(color, subset=([8,9], "Column3"))
+#df.style.applymap(lambda x: 'font-weight: bold' if x == '|' else None, subset=([8,9], "Column3"))
 
 st.dataframe(df)
 
