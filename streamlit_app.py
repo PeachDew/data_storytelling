@@ -573,7 +573,7 @@ styled = df.style.applymap(color, subset=("Hue","Column3"))
 styled2 = styled.applymap(bold, subset=('Intensity', "Column3"))
 
 
-st.dataframe(styled2, height = 600, use_container_width=True)
+st.dataframe(styled2, height = 450, use_container_width=True)
 
 
 
