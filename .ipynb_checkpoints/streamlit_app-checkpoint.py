@@ -565,10 +565,10 @@ df = pd.DataFrame(data, index=row_names)
 def color(x):
     return f"color: red;" if  x == '|' else None
 
-df.style.applymap(color, subset="Column3")
+styled = df.style.applymap(color, subset="Column3")
 #df.style.applymap(lambda x: 'font-weight: bold' if x == '|' else None, subset=([8,9], "Column3"))
 
-st.dataframe(df)
+st.dataframe(styled)
 
 
 
