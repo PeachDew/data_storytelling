@@ -558,13 +558,17 @@ row_names = [
 data = {
     'Column1': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', '|', '|', '|'],
     'Column2': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', '|', '|', '|'],
-    'Column3': ['/', '□', '--', '||', 'O', ')', '+', '[ | ]', '|', '|', '  |', '<-|->'],
+    'Column3': ['/', '□', '--', '||', 'O', ')', '+', '[ | ]', '|', '|', '     |', '<-|->'],
     'Column4': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', '|', '|', '|']
 }
-
 df = pd.DataFrame(data, index=row_names)
 
-st.dataframe(df)
+df_styled = df.style.applymap(lambda x: 'color: red' if x == '|' else '', subset=pd.IndexSlice[[9], ['Column3']])
+df_styled = df_styled.applymap(lambda x: 'font-weight: bold' if x == '|' else '', subset=pd.IndexSlice[[10], ['Column3']])
+df_styled = df.style.hide_columns()
+
+
+st.dataframe(df_styled)
 
 
 
