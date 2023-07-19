@@ -547,18 +547,19 @@ There are three types of memory in the brain that are particularly relevant to v
 ''')
 st.divider()
 st.markdown("### Preattentive attributes 💡")
+st.markdown("#### A simple exercise: Scan through the table below")
 
 row_names = [
-    'Orientation', 'Shape', 'Line_length', 'Line_width',
-    'Size', 'Curvature', 'Added_marks', 'Enclosure',
-    'Hue', 'Intensity', 'Spatial_position', 'Motion'
+    'Orientation', 'Shape', 'Line length', 'Line width',
+    'Size', 'Curvature', 'Added marks', 'Enclosure',
+    'Hue', 'Intensity', 'Spatial position', 'Motion'
 ]
 
 data = {
-    'Column1': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'aaah', '|', 'o'],
-    'Column2': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'aaah', '|', 'o'],
-    'Column3': ['/', '□', '--', '||', 'O', ')', '+', '[ | ]', '|', 'AAAH', '     |', '...o'],
-    'Column4': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'aaah', '|', 'o']
+    '1': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'aaah', '|', 'o'],
+    '2': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'aaah', '|', 'o'],
+    '3': ['/', '□', '--', '||', 'O', ')', '+', '[ | ]', '|', 'AAAH', '     |', '...o'],
+    '4': ['|', '|', '-', '|', 'o', '|', '-', '|', '|', 'aaah', '|', 'o']
 }
 df = pd.DataFrame(data, index=row_names)
 
@@ -575,6 +576,7 @@ styled2 = styled.applymap(bold, subset=('Intensity', "Column3"))
 
 st.dataframe(styled2, height = 450, use_container_width=True)
 
+st.write("As you scan across the dataframe values, your eye is automatically drawn to the unique element within each group. There's no need to consciously search for it. This innate ability stems from our brain's natural inclination to rapidly identify differences in our surroundings.")
 
 
 
