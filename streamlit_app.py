@@ -562,8 +562,8 @@ data = {
 }
 df = pd.DataFrame(data, index=row_names)
 
-df_styled = df.style.applymap(lambda x: 'color: red' if x == '|' else '', subset=(slice(8,9), "Column3"))
-df_styled = df_styled.applymap(lambda x: 'font-weight: bold' if x == '|' else '', subset=(slice(8,9), "Column3"))
+df_styled = df.style.applymap(lambda x: 'color: red' if x == '|' else '', subset=(slice(8), "Column3"))
+df_styled = df_styled.applymap(lambda x: 'font-weight: bold' if x == '|' else '', subset=(slice(9), "Column3"))
 
 st.dataframe(df_styled)
 
