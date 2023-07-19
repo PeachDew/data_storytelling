@@ -568,14 +568,12 @@ def color(x):
 def bold(x):
     return f"font-weight: bold; font-size: 32px;" if  x == 'A' else None
 
-df.style.set_table_styles([
-    {'selector': 'thead', 'props': [('display', 'none')]}
-])
+
 styled = df.style.applymap(color, subset=("Hue","Column3"))
 styled2 = styled.applymap(bold, subset=('Intensity', "Column3"))
 
 
-st.dataframe(styled2, height = 100)
+st.dataframe(styled2, height = 1300, column_config=None)
 
 
 
